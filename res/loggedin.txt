@@ -1,0 +1,2 @@
+<h3 id="welcome"></h3>
+<button id="logout" class="login_btn">Log Out!</button>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Inventory Management System</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script type="text/javascript" src="/jquery.js"></script>
+		<script type="text/javascript" src="/main.js"></script>
+		<script type="text/javascript" src="/qrcode.js"></script>
+	</head>
+	<body>
+		<div id="navigation">
+			<div id="placement">
+				<image src="/logo.png" id="logo"></image>
+				<div id="login"></div>
+				<div id="loggedin_nav">
+					<div id="search">
+						<h3 style="text-align: center;">Search</h3>
+						<input type="text" disabled="true" id="query" class="login_fields" placeholder="Search...">
+						<select class="login_fields" id="SearchType" value="literal">
+							<option value="literal">Literal</option>
+							<option value="keywords">Key Words</option>
+						</select>
+						<hr />
+						<div id="search_results">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="panel">
+			</div>
+		</div>
+		<div id="content">
+			<h1>&larr; Please Log In to Begin!</h1>
+			<h1 style="text-align: center">Welcome to the Inventory Management System!</h1>
+		</div>
+	</body>
+</html>

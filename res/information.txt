@@ -1,0 +1,133 @@
+<style type="text/css">
+#content #name
+{
+	color: darkcyan;
+}
+#content #home_btn
+{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 64px;
+	height: 64px;
+	-webkit-transition: all .5s ease-in-out;
+}
+#content #home_btn:hover
+{
+	/*padding-bottom: 25%;*/
+	height: 128px;
+}
+
+#content .box
+{
+	border: 2px solid #404040;
+	padding: 8px;
+}
+#content #tbl
+{
+	width: 100%;
+}
+#content #tbl .button
+{
+	text-align: center;
+	width: 32px;
+	background-color: #404040;
+	color: #C6C6C6;
+	border: 2px solid #98BF21;
+	border-radius: 16px;
+}
+#content #tbl .button:hover
+{
+	background-color: darkcyan;
+	color: chartreuse;
+	border: 2px solid red;
+}
+#content #tbl input
+{
+	width: 100%;
+	box-sizing: border-box;
+	border: 2px solid #98BF21;
+	color: #C6C6C6;
+	background-color: #404040;
+	height: 32px;
+	font-size: 24px;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 16px;
+}
+#content #tbl input:hover, #content #tbl input:focus
+{
+	background-color: darkcyan;
+	color: chartreuse;
+	border: 2px solid red;
+}
+#content #submit
+{
+	width: 240px;
+	height: 48px;
+	background-color: #404040;
+	color: #C6C6C6;
+	border: 2px solid #98BF21;
+}
+#content #submit:hover
+{
+	background-color: darkcyan;
+	color: chartreuse;
+	border: 2px solid red;
+}
+#content #qrcd
+{
+	width: 256px;
+	height: 256px;
+	padding: 0px;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-o-transform-origin: top left;
+	transform-origin: top left;
+}
+#content #qrcd:hover
+{
+	-webkit-transform: scale(2.0);
+}
+
+#content #description
+{
+	background-color: white;
+	color: #404040;
+	max-height: 500px;
+	overflow-y: auto;
+}
+#content #description:hover, #content #description:active
+{
+	background-color: #404040;
+	color: #C6C6C6;
+}
+</style>
+<h1>Name: <span id="name">Loading...</span></h1>
+<image id="home_btn" src="/home.png" id="home"></image>
+<div class="box" id="qrcd"></div>
+<br />
+<div class="box">
+	<h2>Quantity Available:</h2>
+	<table id="tbl">
+		<tr>
+			<td class="button" id="m10">-10</td>
+			<td class="button" id="m1">-1</td>
+			<td><input type="text" min="0" id="quantity" placeholder="Quantity Available"></td>
+			<td class="button" id="p1">+1</td>
+			<td class="button" id="p10">+10</td>
+		</tr>
+	</table>
+</div>
+<br />
+<div class="box">
+	<h2>Description:</h2>
+	<p class="box" id="description" contenteditable="true"></p>
+</div>
+<button class="login_btn" id="submit">Submit Changes</button>

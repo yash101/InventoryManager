@@ -1,0 +1,3 @@
+<input class="login_fields" type="text" id="username" placeholder="username">
+<input class="login_fields" type="password" id="password" placeholder="password">
+<button id="login_button" class="login_btn">Log In!</button>

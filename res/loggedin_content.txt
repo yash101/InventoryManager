@@ -1,0 +1,30 @@
+<div id="table_header">
+	<table id="table">
+		<tr>
+			<th class="quantity">#</th>
+			<th>Name</th>
+			<th class="quantity">Qty</th>
+			<th class="button">+</th>
+			<th class="button">-</th>
+		</tr>
+	</table>
+</div>
+
+<div class="table_rest">
+	<table id="table">
+		<tr><td><h1>Please click refresh at the bottom right of the page if this text doesn't disappear in a moment!</h1></td></tr>
+	</table>
+</div>
+
+<div style="height: 64px; opacity:0.0;">If you see me, something's wrong! I'm just a spacer!</div>
+
+<div id="table_add">
+	<table id="table">
+		<tr>
+			<th><input type="text" placeholder="Name" id="name"></th>
+			<th id="submit" class="button">&rarr;</th>
+		</tr>
+	</table>
+</div>
+
+<image src="/refresh.png" id="refresh_icon"></image>

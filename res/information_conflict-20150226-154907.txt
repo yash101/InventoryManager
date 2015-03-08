@@ -1,0 +1,2 @@
+<h1 id="fieldName">Name! Loading...</h1>
+<p>Quantity: <input type="text" id="quantity" onclick="javascript:"></p>
