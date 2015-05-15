@@ -11,6 +11,8 @@
 void cmdline(int argc, char** argv);
 int main(int argc, char** argv)
 {
+    std::cout << std::setprecision(1000) << dev::piCalc<long double>(5000000000) << std::endl;
+
     cmdline(argc, argv);
     WebServer server;
     server.set_listening_port(port_web);

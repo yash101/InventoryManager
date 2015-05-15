@@ -21,11 +21,14 @@ public:
     bool set(std::string name, std::string key, std::string value);
     bool remove(std::string name);
     bool clear();
+    bool tokenExists(std::string token);
+    bool setDB(std::string token, std::string data);
     size_t getCount(std::string name);
     std::string get(std::string name, std::string key);
     std::vector<std::string> find(std::string query, std::string method);
     std::vector<std::string> getlist();
     std::string getName(std::string token);
+    std::string getDB(std::string token);
 
     std::string getAccessToken(std::string name);
     std::string getByAccessToken(std::string token, std::string key);

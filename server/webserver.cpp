@@ -165,8 +165,23 @@ const std::string WebServer::on_request(const dlib::incoming_things& incoming, d
         return getInventory().getName(incoming.queries["token"]);
     }
 
+    if(incoming.path == "/getDB")
+    {
+        outgoing.headers["content-type"] = "text/plain";
+        if(!authenticate(incoming)) return "Authentication Failure!";
+        return getInventory().getDB(incoming.queries["token"]);
+    }
+
+    if(incoming.path == "/setDB")
+    {
+        outgoing.headers["content-type"] = "text/plain";
+        if(!authenticate(incoming)) return "Authentication Failure!";
+        return getInventory().setDB(incoming.queries["token"], incoming.queries["data"]) ? "true" : "false";
+    }
+
     if(incoming.path.size() > std::string("/qedit/").size() && incoming.path.substr(0, std::string("/qedit/").size()) == "/qedit/")
     {
+        return "<script type=\"text/javascript\">var token = \"/db_" + incoming.path.substr(std::string("/qedit/").size(), incoming.path.size()) + "\"</script>" + readFile("res/qedit_stub.html");
     }
 
     //UI file server

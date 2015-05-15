@@ -231,6 +231,7 @@ function loadInformation(token)
 			console.log(i);
 			var url = "http://" + c + "/qedit/" + encodeURI(token.substring(i + 1, token.length));
 			new QRCode(document.querySelectorAll("#content #qrcd")[0], url);
+			document.querySelectorAll("#content #qrcd")[0].onclick = function() { document.open(url, "_blank"); };
 		});
 	});
 }

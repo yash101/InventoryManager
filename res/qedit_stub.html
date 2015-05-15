@@ -135,6 +135,40 @@
 			color: chartreuse;
 			border: 2px solid red;
 		}
+
+		#Form #Holder #name
+		{
+			font-size: 32px;
+			text-align: center;
+		}
+
+		#Form #Holder #Submit:hover
+		{
+			background-color: #602571;
+			color: #B5FF00;
+		}
+
+		#Form #Holder #Submit
+		{
+			text-align: center;
+		}
+
+		#Form #Holder #fields .name
+		{
+			width: 200px;
+		}
+
+		#Form #Holder #fields
+		{
+			background-color: #C6C6C6;
+			width: 100%;
+		}
+
+		#Form #Holder #fields th
+		{
+			background-color: #404040;
+			color: #C6C6C6;
+		}
 		</style>
 	</head>
 	<body>
@@ -148,18 +182,28 @@
 		<div id="Form">
 			<button id="logout" class="login_btn">Logout</button>
 			<div id="Holder">
+				<div class="box" id="name">Name...</div>
 				<div class="box">
 					<h2>Quantity Available:</h2>
 					<table id="tbl-qty">
 						<tr>
 							<td class="button" id="m10">-10</td>
 							<td class="button" id="m1">-1</td>
-							<td><input type="text" min="0" id="quantity" placeholder="Quantity Available"></td>
+							<td><input type="text" min="0" value="0" id="quantity" placeholder="Quantity Available"></td>
 							<td class="button" id="p1">+1</td>
 							<td class="button" id="p10">+10</td>
 						</tr>
 					</table>
 				</div>
+				<div class="box">
+					<table id="fields">
+						<tr>
+							<th class="name">Name</th>
+							<th>Value</th>
+						</tr>
+					</table>
+				</div>
+				<div class="box" id="Submit">Submit Changes!</div>
 			</div>
 		</div>
 	</body>

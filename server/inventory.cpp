@@ -277,6 +277,40 @@ std::string Inventory::getName(std::string token)
     return "Unable to resolve token!";
 }
 
+bool Inventory::tokenExists(std::string token)
+{
+    std::map<std::string, std::string> mp = dev::ConfigurationParser(getDBLocation("/fname.dat")).getMap();
+    for(std::map<std::string, std::string>::const_iterator it = mp.begin(); it != mp.end(); ++it)
+    {
+        if((*it).second == token) return true;
+    }
+    return false;
+}
+
+std::string Inventory::getDB(std::string token)
+{
+    if(!tokenExists(token))
+    {
+        _lastError = "E_TOKEN_RESOLVE -> " + dev::toString(__FILE__) + " near " + dev::toString(__LINE__);
+        dev::Log()(_lastError);
+        return _lastError;
+    }
+    dev::ConfigurationParser fnames(getDBLocation("/fname.dat"));
+    return read_file(getDBLocation(fnames[getName(token)]));
+}
+
+bool Inventory::setDB(std::string token, std::string data)
+{
+    if(!tokenExists(token))
+    {
+        _lastError = "E_TOKEN_RESOLVE -> " + dev::toString(__FILE__) + " near " + dev::toString(__LINE__);
+        dev::Log()(_lastError);
+        return false;
+    }
+    write_file(getDBLocation(token), data);
+    return true;
+}
+
 Inventory::Inventory() {}
 
 Inventory inventory;
